@@ -1,2 +1,7 @@
 <h1>Projects#new</h1>
 <p>Find me in app/views/projects/new.html.erb</p>
+<%= simple_form_for @project do |f| %>
+  <%= f.input :title %>
+  <%= f.input :photo, as: :file %>
+  <%= f.button :submit %>
+<% end %>

@@ -1,2 +1,17 @@
 <h1>Projects#index</h1>
 <p>Find me in app/views/projects/index.html.erb</p>
+<%= link_to "new project", new_project_path %>
+<div class="container">
+  <div class="d-flex justify-content-center flex-wrap">
+  <% @projects.each do |project|%>
+  <div class="card  m-3" style="width: 18rem;">
+    <%= cl_image_tag project.photo.key,height: 300, width: 400, class: "card-img-top" %>
+    <div class="card-body">
+      <h5 class="card-title"> <%= project.title %></h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <%= link_to "See more", project_path(project) , class: "btn btn-primary" %>
+    </div>
+  </div>
+  <% end %>
+</div>
+</div>
