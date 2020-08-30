@@ -1,0 +1,2 @@
+class ProjectResource < ApplicationRecord
+end
