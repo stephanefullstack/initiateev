@@ -5,10 +5,10 @@
   <div class="d-flex justify-content-center flex-wrap">
   <% @projects.each do |project|%>
   <div class="card  m-3" style="width: 18rem;">
-    <% if project.photo.attached? == nil %>
-      <%= image_tag "https://upload.wikimedia.org/wikipedia/commons/9/99/InsSight_spacecraft_appendix_gallery_Image_55-full.jpg", alt: "alttext" %>
-    <% else %>
+    <% if project.photo.attached? %>
       <%= cl_image_tag project.photo.key,height: 300, width: 400, class: "card-img-top" %>
+    <% else %>
+      <%= image_tag "https://upload.wikimedia.org/wikipedia/commons/9/99/InsSight_spacecraft_appendix_gallery_Image_55-full.jpg", alt: "alttext" %>
     <% end %>
     <div class="card-body">
       <h5 class="card-title"> <%= project.title %></h5>
