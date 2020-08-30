@@ -5,7 +5,11 @@
   <div class="d-flex justify-content-center flex-wrap">
   <% @projects.each do |project|%>
   <div class="card  m-3" style="width: 18rem;">
-    <%= cl_image_tag project.photo.key,height: 300, width: 400, class: "card-img-top" %>
+    <% if project.photo.attached? == nil %>
+      <%= image_tag "https://upload.wikimedia.org/wikipedia/commons/9/99/InsSight_spacecraft_appendix_gallery_Image_55-full.jpg", alt: "alttext" %>
+    <% else %>
+      <%= cl_image_tag project.photo.key,height: 300, width: 400, class: "card-img-top" %>
+    <% end %>
     <div class="card-body">
       <h5 class="card-title"> <%= project.title %></h5>
       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
